@@ -37,7 +37,7 @@ export class EditorView extends Emitter<EventsTypes> {
                 return connection.input === input || connection.output === output
             })
 
-            relatedConnections.forEach(([_, view]) => requestAnimationFrame(() => view.update()))
+            relatedConnections.forEach(([_, view]) => requestAnimationFrame(async () => view.update()))
         })
 
         this.area = new Area(container, this);
